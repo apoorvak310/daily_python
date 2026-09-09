@@ -1,4 +1,4 @@
-# #1. 
+# #1. Display Student name, roll no, marks
 class Student:
     def __init__(self,n,rno,m):
         self.n = n
@@ -11,7 +11,7 @@ s1 = Student('Rahul',101,85)
 res = s1.display_info()
 print(res)
 
-#2.
+#2. return area and perimeter of a rectangle
 class Rectangle:
     def __init__(self,l,b):
         self.l = l
@@ -26,7 +26,7 @@ perimeter = r1.perimeter()
 print(area)
 print(perimeter)
 
-#3.
+#3. display employee name, id and salary
 class Employee:
     def __init__(self,name, e_id, sal):
         self.name = name
@@ -43,7 +43,7 @@ res = e1.bonus(1000)
 res2 = e1.info()
 print(res2)
 
-#4.
+#4. display a mobile brand, model and price
 class Mobile:
     def __init__(self,brand,model,price):
         self.brand = brand
