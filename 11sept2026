@@ -1,0 +1,71 @@
+student management system
+bad way of coding:
+class StdMgtSystem:
+  def __init__(self,n,a,m1,m2,f):
+    #data
+  def display()
+  def average()
+  def revenue()
+  TO DO:
+  2 seperate pices- students, management. so create 2 classes.
+class Person:
+  def __init__(self,name,age):
+    self.name = name
+    self.age = age
+  def info(self):
+    print(self.name, self.age)
+  
+  #1class related to student:
+  class Student(Person):
+    def __init__(self, name,age,m1,m2):
+      super().__init__(name,age)
+      self.name = name
+      self.age = age
+      self.eng_marks = m1
+      self.math_marks = m2
+      
+      #if you want to override
+    def display(self):
+      super().info()
+      
+    def get_avg(self):
+      return (self.eng_marks + self.math_marks)//2
+    def getgrade(self):
+      avg = self.get_avg()
+      if avg > 70:
+        grade = 'A'
+      elif avg > 60:
+        grade = 'B'
+      else:
+        grde = 'c'
+      msg = f'{self.name} has secured {grade}'
+      return msg
+      
+to manage these students=
+
+class Trainer:
+  def __init__(self,name,age,q):
+    super().__init__(name,age)
+    self.qualification = q
+  def info(self):
+    super().info()
+    print(self.qualification)
+    
+another class for the management(which manages/stores data alot of number of students in the above format)
+
+class StdMgmt:
+  def __init__(self):
+    self.students = []
+    self.trainers = []
+    
+  def join(self,std):
+    self.students.append(std)
+  def display_students(self):
+    for std in self.students:
+      std.display() #no inheritance here - cuz there's no relation btw std class and mgmt class
+s1 = Student('raju', 39, 67,78)
+s1 = Student('siva',40,78,89)
+mgt = stdMgmt()
+mgt.join(s1)
+mgt.join(s2)
+msg.display_students() #the mngmt class -> std class -> display() 18:23
