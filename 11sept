@@ -6,7 +6,7 @@ class StdMgtSystem:
   def display()
   def average()
   def revenue()
-  TO DO:
+GOOD WAY OF CODING:
   2 seperate pices- students, management. so create 2 classes.
 class Person:
   def __init__(self,name,age):
@@ -62,10 +62,101 @@ class StdMgmt:
     self.students.append(std)
   def display_students(self):
     for std in self.students:
-      std.display() #no inheritance here - cuz there's no relation btw std class and mgmt class
+      std.display() #no inheritance here - cuz there's no relation btw std class and mgmt class # has-a relationship = one class being used in another class
 s1 = Student('raju', 39, 67,78)
 s1 = Student('siva',40,78,89)
 mgt = stdMgmt()
 mgt.join(s1)
 mgt.join(s2)
 msg.display_students() #the mngmt class -> std class -> display() 18:23
+
+#multiple-inheritance
+2 seperate classes:
+class Calc:
+  def __init__(self,a,b):
+    self.a = a
+    self.b = b
+  def addition(self):
+    return self.a + self.b
+
+class Clac2:
+  def __init__(self,x,y):
+    self.x = x
+    self.y = y
+  def multi(self):
+    return self.x * self.y
+class Calculator(Calc,Calc2):
+  pass
+obj = Calculator(10,20)
+res = obj.addition() #30
+print(res)
+res = obj.multi() #error - becuz, only one init method gets called (c3 linearization), to resolve this - goto 96
+print(res)
+
+class Calculator(Calc,Calc2):
+def __init__(self, e,f):
+    Calc1.__init__(self,e,f)
+    Calc2.__init__(self,e,f)
+obj = Calculator(10,20)
+res = obj.addition() #30
+print(res)
+res = obj.multi()
+print(res)
+
+#hierarchiral inheritance + multiple inheritance = hybrid inheritance
+conclusion - 
+acquiring prop from one class to another class. 
+main objective - code reusability.
+5 types - single(1 child - 1 parent), multi level(parent - child - grandchild), multiple(multiple parent - one child), hierarchial(1 parent - multiple child), hybrid(multiple inheritances)
+overriding - changing/modifying parent class method in child class
+bottum up(focusing on code reusability first), top down(starting from main logic first)
+MRO
+
+
+3. POLYMORPHISM
+
+same piece of code behaving differently in diffrnt situatuions
+example = +
+10+20 = 30(addition)
+'raju' + 'krishna' = 'rajukrishna'(concatination)
+    WHY    
+
+MAGIC METHODS: spl methds given by py, do not need to call externally, they autoamtically invoke based on the operation we perform.
+a = 10 #(not just a variable -> it is an object)(object = collec. of data and methods)
+#integer class object
+res = isinstance(a,int)
+print(res) #True = a is an integer class object
+
+a = ['raju',10,20]
+a.append(100) #calling append method from list class
+res = isinstance(a,list) #list class object
+print(res)
+
+class Quantity:
+    def __init__(self.qty):
+        self.qty = qty
+    def info(self):
+        print(self.qty)
+q1 = Quantity(10)
+q2 = Quantity(20)
+print(q1+q2) #error
+then, how's this possible? #int class lo add method gets called, that is why it adds
+a = 10
+b = 20
+c = a + b (or) c = a.__add__(b) #magic method = starting _ _ and ending _ _
+print(c)
+#because of magic methods
+check = print(dir(int))
+
+a = 'raju'
+b = 'siva'
+c = a + b #string class lo add method gets called, that is why it concatenates
+print(c)
+
+a = 'raju'
+b = 'siva'
+c = a > b # __gt__ methd
+c = a < b # __lt__ methd
+print(c)
+
+#magic methods first check whether a method exists or not, then it executes else it throws an errror
