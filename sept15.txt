@@ -1,0 +1,48 @@
+is python pure object oriented programming or not? no
+what does it mean - entire programming is only possible through classes and objects. but
+python -> everything is treated as classes and objects
+a = 10 # a is int class object
+b = 'hi' # b is a string class obj
+
+POLYMORPHISM
+same piece of code behaving differently in different places
+
+class Cat:
+	def sounds(self):
+		print('Meow meow')
+class Dog:
+	def sounds(self):
+		print('bow bow')
+class Rat:
+	def sounds(self):
+		print('keech keech')
+...
+if 100 classes and 100 diff methods -> reducing it to one line or two lines = polymorphism
+c = Cat()
+d = Dog()
+r = Rat()
+c.sounds()
+d.sounds()
+r.sounds()
+
+list_objs = [Cat(), Dog(), Rat()]
+for obj in list_objs:
+	obj.sounds() #objects - respective method classes
+now the code behaves diffly. one interface - many actions
+
+
+#normal method/function
+def callmethod(obj):	#this function behaving diffly in diff locations	obj.sounds()
+
+callmethod(Dog())
+#based on the obj, the method gets called
+
+if java infl. interviewer
+Types -> dynamic(duckTyping #unpredictable), static. but in python there's only one.
+
+dynamic - based on the object type during the runtime, it decides which method is to be called.
+
+
+example:
+
+
